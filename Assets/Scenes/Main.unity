@@ -5381,7 +5381,7 @@ MonoBehaviour:
     popupDuration: 1.1
     beamWidth: 0.006
     volume: 0.35
-    shotClip: {fileID: 0}
+    shotClip: {fileID: 8300000, guid: 6838d87a712bdfa459a1ef9981f4c030, type: 3}
 --- !u!1001 &276211648
 PrefabInstance:
   m_ObjectHideFlags: 0
