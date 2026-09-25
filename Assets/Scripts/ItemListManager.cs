@@ -20,12 +20,24 @@ public class ItemListManager : MonoBehaviour
 
     public void AddItem(string itemName, float price)
     {
+        TryAddItem(itemName, price);
+    }
+
+    public bool TryAddItem(string itemName, float price)
+    {
+        if (content == null || itemRow == null || subtotalText == null)
+        {
+            Debug.LogError("ItemListManager : renseignez Content, Item Row et Subtotal Text dans l'Inspector.", this);
+            return false;
+        }
+
         TextMeshProUGUI row = Instantiate(itemRow, content);
         row.text = itemName + " - " + price.ToString("0.00") + "€";
         ItemRows.Add(row.gameObject);
 
         subtotal += price;
         UpdateSubtotal();
+        return true;
     }
 
     public void ResetList()
